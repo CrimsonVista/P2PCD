@@ -20,6 +20,10 @@
 
 #include "MyVeinsApp.h"
 
+using Veins::TraCIMobility;
+using Veins::TraCIMobilityAccess;
+//using Veins::TraCIScenarioManager;
+
 Define_Module(MyVeinsApp);
 
 void MyVeinsApp::initialize(int stage) {
@@ -28,6 +32,11 @@ void MyVeinsApp::initialize(int stage) {
     if (stage == 0) {
         //Initializing members and pointers of your application goes here
         EV << "Initializing " << par("appName").stringValue() << std::endl;
+        //mobi = TraCIMobility().get(getParentModule());
+        //manage = TraCIScenarioManager();
+        //mobility = TraCIMobilityAccess().get(getParentModule());
+        //traci = mobility->getCommandInterface();
+        //inet = VeinsInetMobility();
     }
     else if (stage == 1) {
         //Initializing members that require initialized other modules goes here
@@ -77,5 +86,7 @@ void MyVeinsApp::handlePositionUpdate(cObject* obj) {
     //the vehicle has moved. Code that reacts to new positions goes here.
     //member variables such as currentPosition and currentSpeed are updated in the parent class
     printf("handlePositionUpdate() MyVeinsApp\n");
+    //const double curr_distance = mobility->getDistance(traci.roadPosition,y,z);
+    //double c_dist = manage->CommandDistanceRequest(manage->)
 
 }

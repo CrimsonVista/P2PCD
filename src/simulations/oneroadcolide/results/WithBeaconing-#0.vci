@@ -1,0 +1,91 @@
+file 5894 1542517299                                            
+version 2
+run WithBeaconing-0-20181117-23:59:35-3907
+attr configname WithBeaconing
+attr datetime 20181117-23:59:35
+attr experiment WithBeaconing
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network HelloScenario
+attr processid 3907
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.rsu[*].appl.sendBeacons true
+param *.node[*].appl.sendBeacons true
+param **.debug false
+param **.coreDebug false
+param *.playgroundSizeX 2500m
+param *.playgroundSizeY 2500m
+param *.playgroundSizeZ 50m
+param *.annotations.draw true
+param *.manager.updateInterval 1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown true
+param *.manager.launchConfig "xmldoc(\"hello.launchd.xml\")"
+param *.rsu[0].mobility.x 2000
+param *.rsu[0].mobility.y 2000
+param *.rsu[0].mobility.z 3
+param *.rsu[*].applType "\"MyVeinsApp\""
+param *.rsu[*].appl.headerLength "80 bit"
+param *.rsu[*].appl.sendBeacons false
+param *.rsu[*].appl.dataOnSch false
+param *.rsu[*].appl.beaconInterval 1s
+param *.rsu[*].appl.beaconUserPriority 7
+param *.rsu[*].appl.dataUserPriority 5
+param *.connectionManager.sendDirect true
+param *.connectionManager.maxInterfDist 2600m
+param *.connectionManager.drawMaxIntfDist false
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.phy80211p.sensitivity -89dBm
+param *.**.nic.phy80211p.useThermalNoise true
+param *.**.nic.phy80211p.thermalNoise -110dBm
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.node[*].applType "\"MyVeinsApp\""
+param *.node[*].appl.headerLength "80 bit"
+param *.node[*].appl.sendBeacons false
+param *.node[*].appl.dataOnSch false
+param *.node[*].appl.beaconInterval 1s
+param *.node[*].veinsmobilityType.debug true
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 1.895
+param *.node[*0].veinsmobility.accidentCount 1
+param *.node[*0].veinsmobility.accidentStart 75s
+param *.node[*0].veinsmobility.accidentDuration 50s
+
+vector 0 HelloScenario.node[0].veinsmobility posx ETV
+vector 1 HelloScenario.node[0].veinsmobility posy ETV
+vector 2 HelloScenario.node[0].veinsmobility speed ETV
+vector 3 HelloScenario.node[0].veinsmobility acceleration ETV
+vector 4 HelloScenario.node[0].veinsmobility co2emission ETV
+vector 5 HelloScenario.node[1].veinsmobility posx ETV
+vector 6 HelloScenario.node[1].veinsmobility posy ETV
+vector 7 HelloScenario.node[1].veinsmobility speed ETV
+vector 8 HelloScenario.node[1].veinsmobility acceleration ETV
+vector 9 HelloScenario.node[1].veinsmobility co2emission ETV
+9	2908 86 158 278 7 10 4 3.23687224832 6.50477888 19.45226295296 100.52916192307
+8	2994 41 158 278 7 10 4 2 2 8 16
+7	3035 52 118 278 6 10 5 2 10 30 220
+6	3087 84 78 278 5 10 6 26.65 26.65 159.9 4261.335
+5	3171 78 78 278 5 10 6 30.1 50.1 220.6 8428.06
+vector 10 HelloScenario.node[2].veinsmobility posx ETV
+vector 11 HelloScenario.node[2].veinsmobility posy ETV
+11	3359 16 318 318 11 11 1 26.65 26.65 26.65 710.2225
+10	3375 14 318 318 11 11 1 526 526 526 276676
+0	3389 481 21 815 2 35 34 30.1 385.2 5848.4 1463162.04
+1	3870 498 21 815 2 35 34 26.65 26.65 906.1 24147.565
+2	4368 417 40 815 3 35 33 1 13.9 369 4683.2
+3	4785 346 59 815 4 35 32 0 1 12.9 12.81
+4	5131 762 59 815 4 35 32 1.68921903104 5.07307639936 83.704016632934 251.20511704649
+

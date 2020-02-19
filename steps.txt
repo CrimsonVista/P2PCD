@@ -1,0 +1,10 @@
+# setup GUI forwarding for MacOS
+export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+xhost +$IP
+
+# build from Dockerfile
+make run-bash
+
+# inside docker container
+/entrypoint.sh omnet
+/root/veins-veins-4.7.1/sumo-launchd.py -vv -c sumo

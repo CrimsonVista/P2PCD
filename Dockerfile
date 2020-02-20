@@ -45,23 +45,12 @@ RUN	tar zxvf omnetpp-5.3-src-linux.tgz && \
 	./configure && \
 	make
 
-# Download and Unzip Veins
- RUN cd /root && wget https://veins.car2x.org/download/veins-4.7.1.zip && \
-	unzip veins-4.7.1.zip && \
-	rm veins-4.7.1.zip
-COPY ./veins-4.7.1/src/veins/modules/messages/BasicSafetyMessage.msg /root/veins-veins-4.7.1/src/veins/modules/messages/.
-COPY ./veins-4.7.1/src/veins/modules/application/ieee80211p/BaseWaveApplLayer.cc /root/veins-veins-4.7.1/src/veins/modules/application/ieee80211p/.
-COPY ./veins-4.7.1/src/veins/modules/application/ieee80211p/BaseWaveApplLayer.h /root/veins-veins-4.7.1/src/veins/modules/application/ieee80211p/.
-COPY ./veins-4.7.1/src/veins/modules/application/ieee80211p/BaseWaveApplLayer.ned /root/veins-veins-4.7.1/src/veins/modules/application/ieee80211p/.
-COPY ./veins-4.7.1/src/veins/modules/mobility/traci/TraCICommandInterface.cc /root/veins-veins-4.7.1/src/veins/modules/mobility/traci/.
-COPY ./veins-4.7.1/src/veins/modules/mobility/traci/TraCICommandInterface.h /root/veins-veins-4.7.1/src/veins/modules/mobility/traci/.
-COPY ./veins-4.7.1/src/veins/modules/application/traci/MyVeinsApp.cc /root/veins-veins-4.7.1/src/veins/modules/application/traci/.
-COPY ./veins-4.7.1/examples/veins/erlangen.rou.xml /root/veins-veins-4.7.1/examples/veins/.
+# Veins src code
+COPY ./veins-4.7.1/ /root/veins-4.7.1
+RUN ls -la /root/veins-4.7.1
 
-RUN cp /usr/lib/x86_64-linux-gnu/libssl.so /root/veins-veins-4.7.1/src/.
-RUN cp /usr/lib/x86_64-linux-gnu/libcrypto.so /root/veins-veins-4.7.1/src/.
-# COPY ./veins-4.7.1.zip /root/.
-# RUN cd /root && unzip veins-4.7.1.zip && rm veins-4.7.1.zip
+RUN cp /usr/lib/x86_64-linux-gnu/libssl.so /root/veins-4.7.1/src/.
+RUN cp /usr/lib/x86_64-linux-gnu/libcrypto.so /root/veins-4.7.1/src/.
 
 COPY ./entrypoint.sh /
 

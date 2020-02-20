@@ -2,9 +2,14 @@
 export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 xhost +$IP
 
+# Download omnetpp-5.3-src-linux.tgz and put it in this directory
+
 # build from Dockerfile
 make run-bash
 
 # inside docker container
 /entrypoint.sh omnet
-/root/veins-veins-4.7.1/sumo-launchd.py -vv -c sumo
+/root/veins-4.7.1/sumo-launchd.py -vv -c sumo
+
+# Under run configurations, go to linked libraries, advanced, and select
+# libcrypto libssl libveins from the src/ directory there.
